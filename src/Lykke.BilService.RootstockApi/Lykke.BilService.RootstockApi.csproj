@@ -8,8 +8,14 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Lykke.Quintessence.Rootstock" Version="0.0.2-beta" />
-        <PackageReference Include="Lykke.Quintessence.Api" Version="0.0.2-beta" />
+        <None Update="Dockerfile">
+            <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+        </None>
+    </ItemGroup>
+    
+    <ItemGroup>
+        <PackageReference Include="Lykke.Quintessence.Rootstock.DomainServices" Version="0.0.5-beta" />
+        <PackageReference Include="Lykke.Quintessence.Api" Version="0.0.5-beta" />
     </ItemGroup>
     
 </Project>

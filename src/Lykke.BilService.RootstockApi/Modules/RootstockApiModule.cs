@@ -1,18 +1,20 @@
 using Autofac;
 using JetBrains.Annotations;
 using Lykke.BilService.RootstockApi.Settings;
+using Lykke.Quintessence.Core.DependencyInjection;
+using Lykke.Quintessence.DependencyInjection;
 using Lykke.Quintessence.Settings;
-using Lykke.Quintessence.Utils;
+using Lykke.SettingsReader;
 
 namespace Lykke.BilService.RootstockApi.Modules
 {
     [UsedImplicitly]
     public class RootstockApiModule : Module
     {
-        private readonly AppSettings<RootstockApiSettings> _appSettings;
+        private readonly IReloadingManager<AppSettings<RootstockApiSettings>> _appSettings;
 
         public RootstockApiModule(
-            AppSettings<RootstockApiSettings> appSettings)
+            IReloadingManager<AppSettings<RootstockApiSettings>> appSettings)
         {
             _appSettings = appSettings;
         }
@@ -20,8 +22,11 @@ namespace Lykke.BilService.RootstockApi.Modules
         protected override void Load(
             ContainerBuilder builder)
         {
+            var chainId = _appSettings.CurrentValue.Api.IsMainNet ? 30 : 31;
+            
             builder
-                .RegisterRootstock(_appSettings.Api.IsMainNet);
+                .UseChainId(chainId)
+                .UseRootstockAddChecksumStrategy();
         }
     }
 }
