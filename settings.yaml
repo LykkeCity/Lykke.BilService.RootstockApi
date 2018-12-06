@@ -9,11 +9,11 @@ Api:
     DataConnString:
       settings-key: BilRootstock-DataConnString
       types:
-      - AzureTableStorage
+        - AzureTableStorage
     LogsConnString:
       settings-key: LogsConnString
         types:
-        - AzureTableStorage
+          - AzureTableStorage
   RpcNode:
     ApiUrl:
       settings-key: BilRootstock-RpcNodeApiUrl
