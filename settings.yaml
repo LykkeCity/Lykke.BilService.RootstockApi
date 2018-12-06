@@ -12,8 +12,8 @@ Api:
         - AzureTableStorage
     LogsConnString:
       settings-key: LogsConnString
-        types:
-          - AzureTableStorage
+      types:
+        - AzureTableStorage
   RpcNode:
     ApiUrl:
       settings-key: BilRootstock-RpcNodeApiUrl
