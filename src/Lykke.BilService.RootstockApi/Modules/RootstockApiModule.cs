@@ -22,11 +22,14 @@ namespace Lykke.BilService.RootstockApi.Modules
         protected override void Load(
             ContainerBuilder builder)
         {
-            var chainId = _appSettings.CurrentValue.Api.IsMainNet ? 30 : 31;
-            
             builder
-                .UseChainId(chainId)
-                .UseRootstockAddChecksumStrategy();
+                .UseRootstock
+                (
+                    _appSettings.ConnectionString(x => x.Api.Db.DataConnString),
+                    _appSettings.Nested(x => x.Api.ConfirmationLevel),
+                    _appSettings.Nested(x => x.Api.GasPriceRange),
+                    _appSettings.CurrentValue.Api.IsMainNet
+                );
         }
     }
 }
