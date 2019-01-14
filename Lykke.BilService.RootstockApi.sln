@@ -8,6 +8,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{B24254FB
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lykke.BilService.RootstockApi.Tests", "tests\Lykke.BilService.RootstockApi.Tests\Lykke.BilService.RootstockApi.Tests.csproj", "{A2F9D46D-9D34-489F-A2B0-79E1BE11321C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lykke.BilService.RootstockApi.DomainServices", "src\Lykke.BilService.RootstockApi.DomainServices\Lykke.BilService.RootstockApi.DomainServices.csproj", "{5D314D82-0593-42D4-BE3F-E2B758B197F3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,9 +24,14 @@ Global
 		{A2F9D46D-9D34-489F-A2B0-79E1BE11321C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2F9D46D-9D34-489F-A2B0-79E1BE11321C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2F9D46D-9D34-489F-A2B0-79E1BE11321C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D314D82-0593-42D4-BE3F-E2B758B197F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D314D82-0593-42D4-BE3F-E2B758B197F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D314D82-0593-42D4-BE3F-E2B758B197F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D314D82-0593-42D4-BE3F-E2B758B197F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{3A4AB910-314C-4BE7-9A5B-C72B96C4EB91} = {5E90CBF2-89BE-4C9D-8FF0-DC0183C2E7CD}
 		{A2F9D46D-9D34-489F-A2B0-79E1BE11321C} = {B24254FB-AA7D-4A3A-A3A5-03B0FB56448F}
+		{5D314D82-0593-42D4-BE3F-E2B758B197F3} = {5E90CBF2-89BE-4C9D-8FF0-DC0183C2E7CD}
 	EndGlobalSection
 EndGlobal
