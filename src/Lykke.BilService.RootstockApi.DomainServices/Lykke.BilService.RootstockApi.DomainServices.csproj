@@ -7,7 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Lykke.Quintessence.Api.DomainServices" Version="0.0.25-beta" />
+        <PackageReference Include="Lykke.Quintessence.Api.DomainServices" Version="0.0.26-beta" />
     </ItemGroup>
 
 </Project>
