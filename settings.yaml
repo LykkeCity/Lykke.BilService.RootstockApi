@@ -1,0 +1,38 @@
+Api:
+  ConfirmationLevel:
+    settings-key: Bcn-RBTC-ConfirmationLevel
+  GasPriceRange:
+    settings-key: Bcn-RBTC-GasPriceRange
+  GasReserve:
+    settings-key: Bcn-RBTC-GasReserve
+  IsMainNet:
+    settings-key: Bcn-RBTC-IsMainNet
+  MaxGasAmount:
+    settings-key: Bcn-RBTC-MaxGasAmount
+  Db:
+    DataConnString:
+      settings-key: Bcn-RBTC-DataConnString
+      types:
+        - AzureTableStorage
+    LogsConnString:
+      settings-key: BcnLogsConnString
+      types:
+        - AzureTableStorage
+  RpcNode:
+    ApiUrl:
+      settings-key: Bcn-RBTC-RpcNodeApiUrl
+    ConnectionTimeout:
+      settings-key: Bcn-RBTC-RpcNodeConnectionTimeout
+    EnableTelemetry:
+      settings-key: Bcn-RBTC-RpcNodeEnableTelemetry
+SlackNotifications:
+  AzureQueue:
+    ConnectionString:
+      settings-key: SlackNotificationsConnString
+      types:
+        - AzureTableStorage
+    QueueName:
+      settings-key: SlackQueueName
+MonitoringServiceClient:
+  MonitoringServiceUrl:
+    settings-key: MonitoringServiceUrl
