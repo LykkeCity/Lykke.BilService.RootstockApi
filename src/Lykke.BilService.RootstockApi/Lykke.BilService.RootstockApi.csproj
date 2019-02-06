@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>netcoreapp2.1</TargetFramework>
+        <LangVersion>7.1</LangVersion>
+        <Version>1.0.1</Version>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Update="Dockerfile">
+            <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+        </None>
+    </ItemGroup>
+    
+    <ItemGroup>
+        <PackageReference Include="Lykke.Quintessence.Api" Version="1.0.0" />
+        <PackageReference Include="Lykke.Quintessence.Rootstock" Version="1.0.0" />
+        <PackageReference Include="Lykke.Quintessence.Core.Telemetry" Version="1.0.0" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <ProjectReference Include="..\Lykke.BilService.RootstockApi.DomainServices\Lykke.BilService.RootstockApi.DomainServices.csproj" />
+    </ItemGroup>
+    
+</Project>
