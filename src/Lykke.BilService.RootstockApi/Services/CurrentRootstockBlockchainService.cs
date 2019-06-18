@@ -50,7 +50,7 @@ namespace Lykke.BilService.RootstockApi.Services
                     {
                         await _ethApiClient.SendRawTransactionAsync(transaction.Data);
                     }
-                    catch (RpcErrorException e) when (e.ErrorCode == -32010)
+                    catch (RpcErrorException e) when (e.ErrorCode == -32010 && e.Message == "pending transaction with same hash already exists")
                     {
                         if (await _ethApiClient.GetTransactionAsync(transaction.Hash) != null)
                         {

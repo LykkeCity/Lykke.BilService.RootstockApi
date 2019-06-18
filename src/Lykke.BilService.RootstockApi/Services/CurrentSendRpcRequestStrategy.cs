@@ -46,7 +46,8 @@ namespace Lykke.BilService.RootstockApi.Services
                     var response = JsonConvert.DeserializeObject<RpcResponse>(responseJson);
 
                     if (response.Error != null &&
-                        response.Error.Code == -32010)
+                        response.Error.Code == -32010 &&
+                        response.Error.Message == "pending transaction with same hash already exists")
                     {
                         var error = response.Error;
 
