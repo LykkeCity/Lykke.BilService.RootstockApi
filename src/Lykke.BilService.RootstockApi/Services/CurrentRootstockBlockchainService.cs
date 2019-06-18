@@ -5,6 +5,7 @@ using Lykke.Quintessence.Core.Utils;
 using Lykke.Quintessence.Domain.Services;
 using Lykke.Quintessence.Domain.Services.Strategies;
 using Lykke.Quintessence.RpcClient;
+using Lykke.Quintessence.RpcClient.Exceptions;
 
 namespace Lykke.BilService.RootstockApi.Services
 {
@@ -45,7 +46,19 @@ namespace Lykke.BilService.RootstockApi.Services
 
                 if (pendingTransactionsCount < 4)
                 {
-                    await _ethApiClient.SendRawTransactionAsync(transaction.Data);
+                    try
+                    {
+                        await _ethApiClient.SendRawTransactionAsync(transaction.Data);
+                    }
+                    catch (RpcErrorException e) when (e.ErrorCode == -32010)
+                    {
+                        if (await _ethApiClient.GetTransactionAsync(transaction.Hash) != null)
+                        {
+                            return transaction.Hash;
+                        }
+
+                        throw;
+                    }
 
                     transactionHasBeenBroadcasted = true;
                     break;
