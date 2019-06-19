@@ -11,13 +11,13 @@ using Newtonsoft.Json;
 
 namespace Lykke.BilService.RootstockApi.Services
 {
-    public class CurrentSendRpcRequestStrategy : ISendRpcRequestStrategy
+    public class RootstockSendRpcRequestStrategy : ISendRpcRequestStrategy
     {
         private readonly Uri _apiUrl;
         private readonly TimeSpan _connectionTimeout;
         private readonly IHttpClientFactory _httpClientFactory;
 
-        public CurrentSendRpcRequestStrategy(
+        public RootstockSendRpcRequestStrategy(
             Uri apiUrl,
             TimeSpan connectionTimeout,
             IHttpClientFactory httpClientFactory)
