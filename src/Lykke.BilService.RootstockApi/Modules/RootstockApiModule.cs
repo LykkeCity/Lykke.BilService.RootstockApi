@@ -50,7 +50,7 @@ namespace Lykke.BilService.RootstockApi.Modules
             };
 
             builder
-                .Register(ctx => new CurrentSendRpcRequestStrategy(
+                .Register(ctx => new RootstockSendRpcRequestStrategy(
                     new Uri(_appSettings.CurrentValue.Api.RpcNode.ApiUrl),
                     TimeSpan.FromMinutes(
                         _appSettings.CurrentValue.Api.RpcNode.ConnectionTimeout),
@@ -60,7 +60,7 @@ namespace Lykke.BilService.RootstockApi.Modules
 
             builder.Register
                 (
-                    ctx => new CurrentRootstockBlockchainService
+                    ctx => new Services.RootstockBlockchainService
                     (
                         ctx.Resolve<IEthApiClient>(),
                         ctx.Resolve<IDetectContractStrategy>(),

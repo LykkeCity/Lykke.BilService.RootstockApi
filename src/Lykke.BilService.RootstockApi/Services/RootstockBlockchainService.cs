@@ -9,11 +9,11 @@ using Lykke.Quintessence.RpcClient.Exceptions;
 
 namespace Lykke.BilService.RootstockApi.Services
 {
-    public class CurrentRootstockBlockchainService : DefaultBlockchainService
+    public class RootstockBlockchainService : DefaultBlockchainService
     {
         private readonly IEthApiClient _ethApiClient;
 
-        public CurrentRootstockBlockchainService(
+        public RootstockBlockchainService(
             IEthApiClient ethApiClient,
             IDetectContractStrategy detectContractStrategy,
             IGetTransactionReceiptsStrategy getTransactionReceiptsStrategy,
