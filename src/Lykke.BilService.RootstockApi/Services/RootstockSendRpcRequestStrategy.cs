@@ -25,12 +25,12 @@ namespace Lykke.BilService.RootstockApi.Services
             Uri apiUrl,
             TimeSpan connectionTimeout,
             IHttpClientFactory httpClientFactory,
-            ILog log)
+            ILogFactory logFactory)
         {
             _apiUrl = apiUrl;
             _connectionTimeout = connectionTimeout;
             _httpClientFactory = httpClientFactory;
-            _log = log;
+            _log = logFactory.CreateLog(this);
         }
 
         public virtual async Task<string> ExecuteAsync(

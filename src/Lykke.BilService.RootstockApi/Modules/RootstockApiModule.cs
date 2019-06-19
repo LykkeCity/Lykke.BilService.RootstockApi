@@ -6,6 +6,7 @@ using JetBrains.Annotations;
 using Lykke.BilService.RootstockApi.Domain.Services;
 using Lykke.BilService.RootstockApi.Services;
 using Lykke.BilService.RootstockApi.Settings;
+using Lykke.Common.Log;
 using Lykke.Quintessence.Core.DependencyInjection;
 using Lykke.Quintessence.Core.Telemetry.DependencyInjection;
 using Lykke.Quintessence.DependencyInjection;
@@ -56,7 +57,7 @@ namespace Lykke.BilService.RootstockApi.Modules
                     TimeSpan.FromMinutes(
                         _appSettings.CurrentValue.Api.RpcNode.ConnectionTimeout),
                     ctx.Resolve<IHttpClientFactory>(),
-                    ctx.Resolve<ILog>()
+                    ctx.Resolve<ILogFactory>()
                     ))
                 .As<ISendRpcRequestStrategy>();
 
