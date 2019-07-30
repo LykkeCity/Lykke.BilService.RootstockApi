@@ -1,10 +1,12 @@
 using System;
 using System.Net.Http;
 using Autofac;
+using Common.Log;
 using JetBrains.Annotations;
 using Lykke.BilService.RootstockApi.Domain.Services;
 using Lykke.BilService.RootstockApi.Services;
 using Lykke.BilService.RootstockApi.Settings;
+using Lykke.Common.Log;
 using Lykke.Quintessence.Core.DependencyInjection;
 using Lykke.Quintessence.Core.Telemetry.DependencyInjection;
 using Lykke.Quintessence.DependencyInjection;
@@ -54,7 +56,8 @@ namespace Lykke.BilService.RootstockApi.Modules
                     new Uri(_appSettings.CurrentValue.Api.RpcNode.ApiUrl),
                     TimeSpan.FromMinutes(
                         _appSettings.CurrentValue.Api.RpcNode.ConnectionTimeout),
-                    ctx.Resolve<IHttpClientFactory>()
+                    ctx.Resolve<IHttpClientFactory>(),
+                    ctx.Resolve<ILogFactory>()
                     ))
                 .As<ISendRpcRequestStrategy>();
 
